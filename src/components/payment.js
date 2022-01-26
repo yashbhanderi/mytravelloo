@@ -90,7 +90,7 @@ const Payment = () => {
                                     type="text"
                                     name="card_no"
                                     value={data.card_no}
-                                    placeholder="1234 5678 1234"
+                                    placeholder="123456789123"
                                     required
                                     onChange={handleInputChange}
                                 />
@@ -101,7 +101,7 @@ const Payment = () => {
                                     type="date"
                                     name="expiry_date"
                                     value={data.expiry_date}
-                                    placeholder="MM/YYYY"
+                                    placeholder="01/02/2023"
                                     required
                                     onChange={handleInputChange}
                                 />
@@ -123,7 +123,7 @@ const Payment = () => {
                                     type="text"
                                     name="name"
                                     value={data.name}
-                                    placeholder="Enter your Name"
+                                    placeholder="Rahul"
                                     required
                                     onChange={handleInputChange}
                                 />
