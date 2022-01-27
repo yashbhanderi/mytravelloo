@@ -1,0 +1,947 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+
+:root {
+    --pink: #f95b3d;
+    --text-color-1: #270949;
+    --text-color-2: #666;
+    --bg-color-1: #fff;
+    --bg-color-2: #eee;
+    --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+    /* font-family: "Source Sans Pro", sans-serif; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all 0.2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--pink);
+    border-radius: 5rem;
+}
+
+body {
+    background: var(--bg-color-2);
+}
+
+body.active {
+    --text-color-1: #fff;
+    --text-color-2: #eee;
+    --bg-color-1: #333;
+    --bg-color-2: #222;
+    --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.4);
+}
+
+#root {
+    height: 100vh;
+    width: 100vw;
+}
+
+section {
+    padding: 2rem 7%;
+}
+
+.heading {
+    text-align: center;
+    padding-bottom: 2rem;
+    color: var(--text-color-1);
+    font-size: 4rem;
+    margin: 10px;
+}
+
+.heading span {
+    position: relative;
+    z-index: 0;
+}
+
+.heading span::before {
+    content: "";
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    z-index: -1;
+    background: var(--pink);
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(0 90%, 100% 86%, 100% 100%, 0% 100%);
+}
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.8rem 3rem;
+    font-size: 1.7rem;
+    color: #fff;
+    background: var(--pink);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    letter-spacing: 0.1rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.error {
+    color: var(--text-color-1);
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.home-button {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    margin: 10px;
+}
+
+/***************************************** header  **************************************************/
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-color-1);
+    padding: 1.5rem 7%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bolder;
+    font-size: 3.3rem;
+    color: var(--text-color-1);
+}
+
+.header .logo i {
+    color: var(--pink);
+}
+
+.header .icons div {
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    font-size: 2rem;
+    border-radius: 0.5rem;
+    margin-left: 0.5rem;
+    background: var(--bg-color-2);
+    color: var(--text-color-1);
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .icons div:hover {
+    color: #fff;
+    background: var(--pink);
+}
+
+.header .navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header .navbar ul li {
+    margin: 10px;
+}
+
+.header .navbar ul li a {
+    margin: 3px;
+    padding: 8px;
+    font-size: 1.5rem;
+    color: var(--text-color-1);
+    border-radius: 5px;
+}
+
+.header .navbar ul li a.active,
+.header .navbar ul li a:hover {
+    color: white;
+    background: var(--pink);
+}
+
+.header .icons #menu-btn {
+    display: none;
+}
+
+/************************************* Intro ******************************************/
+.intro {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-top: 7rem;
+}
+
+.intro .image {
+    flex: 1 1 45rem;
+}
+
+.intro .image .img {
+    width: 100%;
+    height: 700px;
+}
+
+.intro .content {
+    flex: 1 1 45rem;
+}
+
+.intro .content h3 {
+    color: var(--text-color-1);
+    font-size: 4rem;
+}
+
+.intro .content p {
+    color: var(--text-color-2);
+    font-size: 1.7rem;
+    line-height: 1.7;
+    padding: 1rem 0;
+}
+
+/************************************** Packages - State *********************************************/
+
+.packages {
+    margin-bottom: 50px;
+}
+
+.packages .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+    margin-top: 20px;
+}
+
+.packages .box-container .box {
+    background: var(--bg-color-1);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.packages .box-container .box .image {
+    height: 25rem;
+    width: 100%;
+    padding: 1.5rem;
+    position: relative;
+}
+
+.packages .box-container .box .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.packages .box-container .box .image h3 {
+    position: absolute;
+    top: 2.5rem;
+    left: 2.5rem;
+    font-size: 2rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0.5rem;
+    font-weight: lighter;
+    padding: 0.5rem 1.5rem;
+}
+
+.packages .box-container .box .image h3 i {
+    color: var(--pink);
+}
+
+.packages .box-container .box .content {
+    padding: 1.5rem;
+    padding-top: 0;
+}
+
+.packages .box-container .box .content .price {
+    font-weight: 600;
+    color: var(--text-color-1);
+    font-size: 2.5rem;
+}
+
+.packages .box-container .box .content .price span {
+    font-weight: lighter;
+    color: var(--text-color-2);
+    font-size: 1.5rem;
+    text-decoration: line-through;
+}
+
+.packages .box-container .box .content p {
+    font-size: 1.5rem;
+    padding: 0.5rem 0;
+    color: var(--text-color-2);
+    line-height: 1.7;
+}
+
+/************************************** trips  *********************************************/
+
+.trips {
+    height: 100vh;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.trips table {
+    margin: auto;
+    border-collapse: collapse;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+}
+
+.trips table tbody {
+    border-radius: 0.5rem;
+}
+
+.trips table thead tr {
+    background-color: var(--pink);
+    color: #ffffff;
+}
+
+.trips table th,
+.trips table td {
+    text-align: center;
+    padding: 12px 50px;
+}
+
+.trips table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.trips table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.trips table tbody tr:last-of-type {
+    border-bottom: 2px solid var(--bg-color-1);
+}
+
+.trips table tbody tr.active-row {
+    font-weight: bold;
+    color: var(--pink);
+}
+
+/************************************** services  *********************************************/
+
+.services .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.services .image {
+    flex: 1 1 45rem;
+}
+
+.services .image .img {
+    width: 100%;
+}
+
+.services .box-container {
+    flex: 1 1 45rem;
+}
+
+.services .box-container .box {
+    background: var(--bg-color-1);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    position: relative;
+    padding: 2rem;
+}
+
+.services .box-container .box span {
+    position: absolute;
+    top: 0.5rem;
+    right: 2rem;
+    color: var(--text-color-2);
+    font-weight: bolder;
+    font-size: 5rem;
+}
+
+.services .box-container .box i {
+    height: 6rem;
+    width: 6rem;
+    line-height: 6rem;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #fff;
+    background: var(--pink);
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+}
+
+.services .box-container .box h3 {
+    color: var(--text-color-1);
+    font-size: 2.3rem;
+    padding: 0.7rem 0;
+}
+
+.services .box-container .box p {
+    color: var(--text-color-2);
+    font-size: 1.5rem;
+    line-height: 1.8;
+}
+
+/************************************** reviews  *********************************************/
+
+.review {
+    margin-bottom: 50px;
+}
+
+.review .review-slider {
+    box-shadow: var(--box-shadow);
+}
+
+.review .review-slider .slide {
+    background: var(--bg-color-1);
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: 3rem;
+}
+
+.review .review-slider .slide h3 {
+    font-size: 2.5rem;
+    color: var(--text-color-1);
+}
+
+.review .review-slider .slide p {
+    font-size: 1.6rem;
+    color: var(--text-color-2);
+    line-height: 1.7;
+    padding: 1rem 0;
+}
+
+.review .review-slider .slide .stars {
+    padding: 1rem 0;
+    padding-bottom: 1.5rem;
+}
+
+.review .review-slider .slide .stars i {
+    font-size: 2rem;
+    color: var(--pink);
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--pink);
+}
+
+/************************************** destination  *********************************************/
+
+.destination .slider {
+    height: 60rem;
+    width: 100%;
+    padding: 3rem;
+    box-shadow: var(--box-shadow);
+}
+
+.destination .slider .slide {
+    width: 100%;
+    text-align: center;
+}
+
+.destination .slider .slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+.destination .details {
+    font-size: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1.5rem;
+    padding: 1.5rem;
+}
+
+.destination .details .about {
+    box-shadow: var(--box-shadow);
+    padding: 3rem;
+    margin: 1.5rem;
+    background-color: var(--bg-color-1);
+    border-radius: 0.5rem;
+    width: 50%;
+}
+
+.destination .details .description {
+    margin: 1.5rem;
+    box-shadow: var(--box-shadow);
+    padding: 3rem;
+    background-color: var(--bg-color-1);
+    border-radius: 0.5rem;
+}
+
+/************************************** travellors details  *********************************************/
+
+.travellors {
+    max-width: 450px;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    margin: 20px auto;
+}
+
+.travellors .title {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+.travellors .title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.travellors .content form .user-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+    box-shadow: var(--box-shadow);
+    padding: 10px 20px;
+    border-radius: 0.5rem;
+}
+
+.travellors form .user-details .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+}
+.travellors form .input-box span.details {
+    display: inline-block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+}
+.travellors .user-details .input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+.travellors .user-details .input-box input:focus,
+.travellors .user-details .input-box input:valid {
+    border-color: #9b59b6;
+}
+
+@media (max-width: 584px) {
+    .travellors {
+        max-width: 100%;
+    }
+    .travellors form .user-details .input-box {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    .travellors form .category {
+        width: 100%;
+    }
+    .travellors .content form .user-details {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+    .travellors .user-details::-webkit-scrollbar {
+        width: 5px;
+    }
+}
+@media (max-width: 459px) {
+    .travellors .content .category {
+        flex-direction: column;
+    }
+}
+
+/************************************** payment  *********************************************/
+
+.payment {
+    max-width: 400px;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    margin: 20px auto;
+}
+.payment .title {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+.payment .title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.payment .content form .card-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+.payment form .card-details .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+}
+.payment form .input-box span.details {
+    display: inline-block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+}
+.payment .card-details .input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+.payment .card-details .input-box input:focus,
+.payment .card-details .input-box input:valid {
+    border-color: #9b59b6;
+}
+
+@media (max-width: 584px) {
+    .payment {
+        max-width: 100%;
+    }
+    .payment form .card-details .input-box {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    .payment form .category {
+        width: 100%;
+    }
+    .payment .content form .card-details {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+    .payment .card-details::-webkit-scrollbar {
+        width: 5px;
+    }
+}
+@media (max-width: 459px) {
+    .payment .content .category {
+        flex-direction: column;
+    }
+}
+
+/************************************** contact us  *********************************************/
+
+.contact {
+    margin-bottom: 20px;
+}
+
+.contact .image {
+    display: inline-block;
+    width: 50%;
+}
+
+.contact .image .img {
+    width: 80%;
+    margin-left: 100px;
+    height: 450px;
+}
+
+.contact form {
+    display: inline-block;
+    max-width: 70rem;
+    width: 50%;
+    text-align: center;
+}
+
+.contact form .inputBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contact form textarea,
+.contact form .inputBox input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--text-color-1);
+    margin: 0.7rem 0;
+    background: var(--bg-color-1);
+    box-shadow: var(--box-shadow);
+    text-transform: none;
+    border-radius: 0.5rem;
+}
+
+.contact form textarea {
+    height: 20rem;
+    resize: none;
+}
+
+.contact form .inputBox input {
+    width: 49%;
+}
+
+/************************************** footer  *********************************************/
+
+.footer {
+    background: var(--bg-color-1);
+}
+
+.footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap: 1.5rem;
+}
+
+.footer .box-container .box h3 {
+    font-size: 2.5rem;
+    color: var(--text-color-1);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--text-color-2);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a i {
+    padding-right: 0.5rem;
+    color: var(--pink);
+}
+
+.footer .box-container .box a:hover i {
+    padding-right: 2rem;
+}
+
+.footer .credit {
+    font-size: 2rem;
+    text-align: center;
+    border-top: 0.1rem solid var(--text-color-2);
+    padding: 1rem;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    color: var(--text-color-2);
+}
+
+.footer .credit span {
+    color: var(--pink);
+}
+
+/************************************** media queries  *********************************************/
+
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 1.5rem 2rem;
+    }
+
+    .intro .image .img {
+        height: 650px;
+    }
+
+    .intro .content {
+        text-align: center;
+    }
+
+    .destination .details .about {
+        width: 50%;
+    }
+
+    section {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header .icons #menu-btn {
+        display: inline-block;
+    }
+
+    .header .navbar.active {
+        background-color: #222;
+        color: #eee;
+    }
+
+    .header .navbar {
+        position: fixed;
+        top: 8rem;
+        left: -120%;
+        height: 100%;
+        width: 100%;
+        background: #eee;
+        border-top: 0.2rem solid rgba(0, 0, 0, 0.1);
+        transition: all 0.5s;
+    }
+
+    .header .navbar ul {
+        flex-flow: column;
+        padding: 2rem;
+    }
+
+    .header .navbar ul li {
+        text-align: center;
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    .header .navbar ul li a {
+        display: block;
+        padding: 1rem;
+    }
+
+    .header .navbar ul li a.active,
+    .header .navbar ul li a:hover {
+        padding: 1rem;
+        background: var(--pink);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .fa-times {
+        transform: rotate(180deg);
+    }
+
+    .header .navbar.nav-toggle {
+        left: 0;
+    }
+
+    .intro .image .img {
+        height: 500px;
+    }
+
+    .intro .content {
+        text-align: center;
+    }
+
+    .destination .details .about {
+        width: 100%;
+    }
+
+    .contact form {
+        display: block;
+        width: 100%;
+    }
+
+    .contact .image {
+        display: block;
+        height: 400px;
+        width: 100%;
+    }
+
+    .contact .image .img {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .intro .image .img {
+        height: 350px;
+    }
+
+    .intro .content {
+        text-align: center;
+    }
+
+    .destination .details .about {
+        width: 100%;
+    }
+
+    .contact form .inputBox input {
+        width: 100%;
+    }
+
+    .contact form {
+        display: block;
+        width: 100%;
+    }
+
+    .contact .image {
+        display: block;
+        height: 400px;
+        width: 100%;
+    }
+
+    .contact .image .img {
+        margin-left: 0;
+        width: 100%;
+    }
+}
