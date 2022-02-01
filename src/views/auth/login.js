@@ -9,7 +9,6 @@ const baseURL = "https://mytravelloo-backend.herokuapp.com/api/v1/";
 const initialState = {
     email: "",
     password: "",
-    isAgent: false,
     error: null,
     loading: false,
 };
@@ -47,7 +46,6 @@ const Login = () => {
             .post(baseURL + "login/", {
                 email: data.email,
                 password: data.password,
-                isAgent: data.isAgent,
             })
             .then((res) => {
                 setData({
@@ -110,16 +108,6 @@ const Login = () => {
                                             onChange={handleInputChange}
                                         />
                                     </div>
-                                    <input
-                                        type="checkbox"
-                                        name="isagent"
-                                        className="checkbox"
-                                        value="xyz"
-                                        onChange={(e) =>
-                                            setData({ ...data, isAgent: e.target.checked })
-                                        }
-                                    />
-                                    <span className="checkbox">Is Agent ?</span>
                                 </div>
                                 <div className="input-box">
                                     <button

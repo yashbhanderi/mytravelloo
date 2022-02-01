@@ -59,6 +59,7 @@ const Tripdetails = (props) => {
     let handleSubmit = () => {
         if (!authState.isAuth) {
             alert("Please Login First !!!");
+            return;
         }
         if (
             nameData.name === "" ||

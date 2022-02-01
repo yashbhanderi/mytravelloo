@@ -281,27 +281,29 @@ export const CRUD = ({ children }) => {
     };
 
     const get_trips = () => {
-        let user_id = JSON.parse(localStorage.getItem("token"))["id"];
-
         dispatch({
             type: "FETCH_TRIPS_REQUEST",
         });
-        axios
-            .post(baseURL + "get-trips/", {
-                customer_id: user_id,
-            })
-            .then((res) => {
-                dispatch({
-                    type: "FETCH_TRIPS_SUCCESS",
-                    payload: res.data.trips,
+
+        let user_id = authState.isAuth ? JSON.parse(localStorage.getItem("token"))["id"] : null;
+
+        user_id &&
+            axios
+                .post(baseURL + "get-trips/", {
+                    customer_id: user_id,
+                })
+                .then((res) => {
+                    dispatch({
+                        type: "FETCH_TRIPS_SUCCESS",
+                        payload: res.data.trips,
+                    });
+                })
+                .catch((err) => {
+                    dispatch({
+                        type: "FETCH_TRIPS_FAILURE",
+                        payload: "Some error occured, Please try after some time!",
+                    });
                 });
-            })
-            .catch((err) => {
-                dispatch({
-                    type: "FETCH_TRIPS_FAILURE",
-                    payload: "Some error occured, Please try after some time!",
-                });
-            });
     };
 
     const get_mail = (trip_id) => {
