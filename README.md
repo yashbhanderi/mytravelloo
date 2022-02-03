@@ -18,8 +18,6 @@
 
 ![image](https://user-images.githubusercontent.com/85643213/152436451-f2a6416f-7411-489b-b8bd-3a72722c1d0f.png)
 
-![image](https://user-images.githubusercontent.com/85643213/152434596-542d3667-8563-4e4f-b202-228ee97dadbe.png)
-
 - Category wise destinations
 
 ![image](https://user-images.githubusercontent.com/85643213/152435955-82e27fe6-3cd4-4ef7-9da5-50fdde261cd1.png)
