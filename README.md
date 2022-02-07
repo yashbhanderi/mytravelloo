@@ -29,3 +29,6 @@
 
 ![152435542-a42df203-3054-4ab5-84d4-9dd579cb8d5d](https://user-images.githubusercontent.com/85643213/152885509-8ad66df1-b5d5-4e04-8edf-3d69d7ab7088.png)
 
+- JWT Authentication with proper warnings
+
+![image](https://user-images.githubusercontent.com/85643213/152888123-da285d72-57be-4d1b-a1a5-58ed01d61319.png)
