@@ -17,15 +17,15 @@
 
 ![152436451-f2a6416f-7411-489b-b8bd-3a72722c1d0f](https://user-images.githubusercontent.com/85643213/152885423-abfb4db9-92c6-45f2-bf22-442426be2f9c.png)
 
-Category wise destinations
+- Category wise destinations
 
 ![152435955-82e27fe6-3cd4-4ef7-9da5-50fdde261cd1](https://user-images.githubusercontent.com/85643213/152885455-b2afac08-23d6-49a7-8276-2a7de9c48ec0.png)
 
-Booked trips
+- Booked trips
 
 ![152434867-20faeb4e-320f-425c-8c4d-b274f285c5a7](https://user-images.githubusercontent.com/85643213/152885484-dec2426b-5e8a-4dd6-b1f4-7116179e83a2.png)
 
-Email ticket details
+- Email ticket details
 
 ![152435542-a42df203-3054-4ab5-84d4-9dd579cb8d5d](https://user-images.githubusercontent.com/85643213/152885509-8ad66df1-b5d5-4e04-8edf-3d69d7ab7088.png)
 
