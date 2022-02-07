@@ -11,6 +11,7 @@ const Trips = () => {
     var my_trips = crudState.trips;
 
     const handleClick = (id) => {
+        window.scrollTo(0, 0);
         setShowMessage(true);
         get_mail(id);
     };
