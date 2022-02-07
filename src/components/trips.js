@@ -19,61 +19,67 @@ const Trips = () => {
         get_trips();
     }, []);
 
-    return authState.isAuth ? (
-        <div className="trips">
+    return (
+        <>
             <Link className="btn home-button" to="/">
                 <div className="fas fa-home"></div>
             </Link>
-            <h1 className="heading">
-                My <span>Trips</span>
-            </h1>
-            {crudState.isFetching === true ? (
-                <p className={"error hide " + (showMessage ? "show" : "")}>Loading...Please Wait</p>
-            ) : (
-                <p className={"error hide " + (showMessage ? "show" : "")}>
-                    {crudState.get_mail_msg}
-                </p>
-            )}
-            <table>
-                <thead>
-                    <tr>
-                        <th>Destination</th>
-                        <th>Travels Company</th>
-                        <th>Booking Date</th>
-                        <th>Email</th>
-                        <th>Full Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {my_trips.map((item) => {
-                        return (
-                            <tr key={item.id}>
-                                <td>{item.destination}</td>
-                                <td>{item.company_name}</td>
-                                <td>{item.date}</td>
-                                <td>{item.email}</td>
-                                <td>
-                                    <button
-                                        style={{ padding: "7px 7px", margin: "0" }}
-                                        className="btn"
-                                        onClick={() => handleClick(item.trip_id)}>
-                                        Email Me
-                                    </button>
-                                </td>
+            {authState.isAuth ? (
+                <div className="trips">
+                    <h1 className="heading">
+                        My <span>Trips</span>
+                    </h1>
+                    {crudState.isFetching === true ? (
+                        <p className={"error hide " + (showMessage ? "show" : "")}>
+                            Loading...Please Wait
+                        </p>
+                    ) : (
+                        <p className={"error hide " + (showMessage ? "show" : "")}>
+                            {crudState.get_mail_msg}
+                        </p>
+                    )}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Destination</th>
+                                <th>Travels Company</th>
+                                <th>Booking Date</th>
+                                <th>Email</th>
+                                <th>Full Details</th>
                             </tr>
-                        );
-                    })}
-                </tbody>
-            </table>
-        </div>
-    ) : (
-        <h1
-            style={{
-                marginTop: "100px",
-                textAlign: "center",
-            }}>
-            Please Login First !
-        </h1>
+                        </thead>
+                        <tbody>
+                            {my_trips.map((item) => {
+                                return (
+                                    <tr key={item.id}>
+                                        <td>{item.destination}</td>
+                                        <td>{item.company_name}</td>
+                                        <td>{item.date}</td>
+                                        <td>{item.email}</td>
+                                        <td>
+                                            <button
+                                                style={{ padding: "7px 7px", margin: "0" }}
+                                                className="btn"
+                                                onClick={() => handleClick(item.trip_id)}>
+                                                Email Me
+                                            </button>
+                                        </td>
+                                    </tr>
+                                );
+                            })}
+                        </tbody>
+                    </table>
+                </div>
+            ) : (
+                <h1
+                    style={{
+                        marginTop: "100px",
+                        textAlign: "center",
+                    }}>
+                    Please Login First !
+                </h1>
+            )}
+        </>
     );
 };
 
