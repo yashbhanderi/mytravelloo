@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useCrudContext } from "../context/crud";
-
 const DestinationPackage = (props) => {
     const { state: crudState, get_destination_list } = useCrudContext();
     const state_name = props.match.params.state__name;

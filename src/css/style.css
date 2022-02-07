@@ -127,11 +127,16 @@ a {
 }
 
 .home-button {
-    position: fixed;
+    /* position: fixed; */
     top: 0px;
     left: 0px;
     margin: 10px;
+    width: 60px;
+    height: 30px;
     z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /***************************************** header  **************************************************/
@@ -142,7 +147,7 @@ a {
     left: 0;
     right: 0;
     background: var(--bg-color-1);
-    padding: 1.5rem 7%;
+    padding: 0.8rem 7%;
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -155,16 +160,27 @@ a {
     align-items: center;
 }
 
-.header .logo {
+.logo {
     font-family: "Source Sans Pro", sans-serif;
     font-weight: bolder;
-    font-size: 3.3rem;
+    font-size: 3.1rem;
+    color: var(--text-color-1);
+}
+
+.logo i {
+    color: var(--pink);
+}
+
+/* .header .logo {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bolder;
+    font-size: 3.1rem;
     color: var(--text-color-1);
 }
 
 .header .logo i {
     color: var(--pink);
-}
+} */
 
 .header .icons div {
     height: 4.5rem;
@@ -194,12 +210,11 @@ a {
 }
 
 .header .navbar ul li {
-    margin: 10px;
+    margin: 8px;
 }
 
 .header .navbar ul li a {
-    margin: 3px;
-    padding: 8px;
+    padding: 8px 10px;
     font-size: 1.5rem;
     color: var(--text-color-1);
     border-radius: 5px;
@@ -479,6 +494,10 @@ a {
 
 /************************************** destination  *********************************************/
 
+.destination {
+    background-color: var(--bg-color-2);
+}
+
 .destination .slider {
     height: 60rem;
     width: 100%;
@@ -506,6 +525,7 @@ a {
     justify-content: center;
     margin: 1.5rem;
     padding: 1.5rem;
+    color: var(--text-color-1);
 }
 
 .destination .details .about {
@@ -591,7 +611,7 @@ a {
 
 @media (max-width: 584px) {
     .travellors {
-        max-width: 100%;
+        max-width: 85%;
     }
     .travellors form .user-details .input-box {
         margin-bottom: 15px;
@@ -601,7 +621,7 @@ a {
         width: 100%;
     }
     .travellors .content form .user-details {
-        max-height: 300px;
+        max-height: 500px;
         overflow-y: scroll;
     }
     .travellors .user-details::-webkit-scrollbar {
@@ -798,6 +818,69 @@ a {
     color: var(--pink);
 }
 
+/************************************** Authentication  *********************************************/
+
+.auth {
+    max-width: 400px;
+    width: 100%;
+    background-color: var(--bg-color-1);
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    margin: 50px auto;
+}
+
+.auth .content form .auth-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+.auth form .auth-details .input-box {
+    width: 100%;
+    margin-bottom: 15px;
+    color: var(--text-color-2);
+}
+.auth form .input-box span.details {
+    display: inline-block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+}
+.auth .auth-details .input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+.auth .auth-details .input-box input:focus,
+.auth .auth-details .input-box input:valid {
+    border-color: #9b59b6;
+}
+
+.auth .auth-details .checkbox {
+    display: inline;
+    height: 20px;
+    width: 20px;
+    font-size: 2.2rem;
+    padding: 0;
+    border: 0;
+}
+
+.auth .auth-details span.checkbox {
+    display: inline-block;
+    font-weight: 500;
+    height: 20px;
+    width: 80px;
+    font-size: 1.4rem;
+}
+
 /************************************** media queries  *********************************************/
 
 @media (max-width: 991px) {
@@ -944,5 +1027,30 @@ a {
     .contact .image .img {
         margin-left: 0;
         width: 100%;
+    }
+}
+
+@media (max-width: 584px) {
+    .auth {
+        max-width: 85%;
+    }
+    .auth form .auth-details .input-box {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    .auth form .category {
+        width: 100%;
+    }
+    .auth .content form .auth-details {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+    .auth .auth-details::-webkit-scrollbar {
+        width: 5px;
+    }
+}
+@media (max-width: 459px) {
+    .auth .content .category {
+        flex-direction: column;
     }
 }

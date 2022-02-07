@@ -72,7 +72,9 @@ const Destination = (props) => {
                             "/" +
                             crudState.destination.id
                         }>
-                        <button className="btn">Book Now</button>
+                        <button style={{ width: "100%" }} className="btn">
+                            Book Now
+                        </button>
                     </Link>
                 </div>
                 <div className="about">

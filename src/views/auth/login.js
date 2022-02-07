@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
 import { useAuthContext } from "../../context/auth";
-import "../../css/auth.css";
 
 const baseURL = "https://mytravelloo-backend.herokuapp.com/api/v1/";
 
@@ -33,6 +32,7 @@ const Login = () => {
                 ...data,
                 error: "Field is empty !",
             });
+            window.scrollTo(0, 0);
             return;
         }
 
@@ -113,22 +113,23 @@ const Login = () => {
                                     <button
                                         type="button"
                                         className="btn"
+                                        style={{ width: "100%" }}
                                         value="Check Out"
                                         onClick={loginHandler}>
                                         {data.loading ? "Logging in..." : "Log In"}
                                     </button>
-                                    <hr />
-                                    <Link to="/signup">
-                                        <button className="btn" type="button">
-                                            Sign Up
-                                        </button>
-                                    </Link>
-                                    &nbsp;
-                                    <Link to="/">
-                                        <button className="btn" type="button">
-                                            Home
-                                        </button>
-                                    </Link>
+                                    <div className="input-box">
+                                        <span style={{ marginTop: "1.5rem" }} className="details">
+                                            Don't have an account ? &nbsp;
+                                            <Link
+                                                style={{
+                                                    textDecoration: "underline",
+                                                }}
+                                                to="/signup">
+                                                Sign Up
+                                            </Link>
+                                        </span>
+                                    </div>
                                 </div>
                             </form>
                         </div>

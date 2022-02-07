@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
 import { useAuthContext } from "../../context/auth";
-import "../../css/auth.css";
-
 const baseURL = "https://mytravelloo-backend.herokuapp.com/api/v1/";
 
 let initialState = {
@@ -46,6 +44,22 @@ const Signup = () => {
                 ...data,
                 error: "Field is empty !",
             });
+            window.scrollTo(0, 0);
+            return;
+        }
+
+        if (
+            !(
+                data.password1.length > 7 &&
+                data.password1.match(/\d/) &&
+                data.password1.match(/[a-z]/i)
+            )
+        ) {
+            setData({
+                ...data,
+                error: "Password length at least 8 and contain at least one alphabet and one number!",
+            });
+            window.scrollTo(0, 0);
             return;
         }
 
@@ -54,6 +68,7 @@ const Signup = () => {
                 ...data,
                 error: "Password Does not match !",
             });
+            window.scrollTo(0, 0);
             return;
         }
 
@@ -200,22 +215,24 @@ const Signup = () => {
                                     <button
                                         type="button"
                                         className="btn"
+                                        style={{ width: "100%" }}
                                         value="Check Out"
                                         onClick={signupHandler}>
                                         {data.loading ? "Signing in..." : "Sign Up"}
                                     </button>
                                     <hr />
-                                    <Link to="/login">
-                                        <button className="btn" type="button">
-                                            Log In
-                                        </button>
-                                    </Link>
-                                    &nbsp;
-                                    <Link to="/">
-                                        <button className="btn" type="button">
-                                            Home
-                                        </button>
-                                    </Link>
+                                    <div className="input-box">
+                                        <span className="details">
+                                            Already have an account ?
+                                            <Link
+                                                style={{
+                                                    textDecoration: "underline",
+                                                }}
+                                                to="/login">
+                                                Login
+                                            </Link>
+                                        </span>
+                                    </div>
                                 </div>
                             </form>
                         </div>

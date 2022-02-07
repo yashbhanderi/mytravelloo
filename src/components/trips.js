@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useCrudContext } from "../context/crud";
 import { useAuthContext } from "../context/auth";
 import { useGlobalContext } from "../context/global";
-
 const Trips = () => {
     const { state: crudState, get_trips, get_mail } = useCrudContext();
     const { state: authState } = useAuthContext();
@@ -28,7 +27,6 @@ const Trips = () => {
             <h1 className="heading">
                 My <span>Trips</span>
             </h1>
-
             {crudState.isFetching === true ? (
                 <p className={"error hide " + (showMessage ? "show" : "")}>Loading...Please Wait</p>
             ) : (
@@ -69,7 +67,13 @@ const Trips = () => {
             </table>
         </div>
     ) : (
-        <h1>Please Login First !</h1>
+        <h1
+            style={{
+                marginTop: "100px",
+                textAlign: "center",
+            }}>
+            Please Login First !
+        </h1>
     );
 };
 

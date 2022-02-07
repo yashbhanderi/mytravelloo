@@ -57,10 +57,10 @@ const Payment = () => {
 
     return (
         <div className="container">
+            <Link className="btn home-button" to="/">
+                <div className="fas fa-home"></div>
+            </Link>
             <div className="payment">
-                <Link className="btn home-button" to="/">
-                    <div className="fas fa-home"></div>
-                </Link>
                 <h1 className="heading">
                     <span> Payment</span>
                 </h1>
@@ -132,6 +132,7 @@ const Payment = () => {
                         <input
                             type="button"
                             className="btn"
+                            style={{ width: "100%" }}
                             value="Check Out"
                             onClick={handleSubmit}
                         />

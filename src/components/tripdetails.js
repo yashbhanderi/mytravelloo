@@ -3,7 +3,6 @@ import { Link, useHistory } from "react-router-dom";
 import { useCrudContext } from "../context/crud";
 import { useAuthContext } from "../context/auth";
 import { useGlobalContext } from "../context/global";
-
 const initialState = {
     email: "",
     phone_number: "",
@@ -72,6 +71,30 @@ const Tripdetails = (props) => {
                 ...input,
                 error: "name, email, phone number, address and date is mandatory",
             });
+            window.scrollTo(0, 0);
+            return;
+        }
+
+        let num = /^\d+$/.test(input.phone_number);
+        if (!(input.phone_number.length === 10 && num)) {
+            setInput({
+                ...input,
+                error: "Phone number should be 10 digit and contains only 0-9",
+            });
+            window.scrollTo(0, 0);
+            return;
+        }
+
+        num = 1;
+        nameData.forEach((item) => {
+            num &= /^\d+$/.test(item.age);
+        });
+        if (!num) {
+            setInput({
+                ...input,
+                error: "Age must be a number",
+            });
+            window.scrollTo(0, 0);
             return;
         }
 
@@ -88,10 +111,10 @@ const Tripdetails = (props) => {
 
     return (
         <div className="container">
-            <div className="travellors" id="travellors">
             <Link className="btn home-button" to="/">
                 <div className="fas fa-home"></div>
             </Link>
+            <div className="travellors" id="travellors">
                 <h1 className="heading">
                     Travellors' <span>Details</span>
                 </h1>
@@ -232,7 +255,11 @@ const Tripdetails = (props) => {
                                 )}
                             </div>
                         </div>
-                        <button type="button" className="btn" onClick={handleSubmit}>
+                        <button
+                            type="button"
+                            className="btn"
+                            style={{ width: "100%" }}
+                            onClick={handleSubmit}>
                             Check Out
                         </button>
                     </form>
