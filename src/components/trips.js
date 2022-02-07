@@ -17,6 +17,7 @@ const Trips = () => {
     };
 
     useEffect(() => {
+        setShowMessage(true);
         get_trips();
     }, []);
 
