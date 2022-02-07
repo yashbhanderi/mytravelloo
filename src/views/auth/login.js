@@ -71,6 +71,9 @@ const Login = () => {
 
     return (
         <div className="container">
+            <Link className="btn home-button" to="/">
+                <div className="fas fa-home"></div>
+            </Link>
             <div className="auth">
                 {state.isAuth ? (
                     <Redirect to="/" />

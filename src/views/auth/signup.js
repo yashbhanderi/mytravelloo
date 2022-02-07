@@ -111,6 +111,9 @@ const Signup = () => {
 
     return (
         <div className="container">
+            <Link className="btn home-button" to="/">
+                <div className="fas fa-home"></div>
+            </Link>
             <div className="auth">
                 {state.isAuth ? (
                     <Redirect to="/" />
@@ -222,7 +225,7 @@ const Signup = () => {
                                     </button>
                                     <hr />
                                     <div className="input-box">
-                                        <span className="details">
+                                        <span style={{ marginTop: "1.5rem" }} className="details">
                                             Already have an account ?
                                             <Link
                                                 style={{
