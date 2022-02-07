@@ -8,6 +8,8 @@ const initialState = {
     card_no: "",
     cvv_no: "",
     expiry_date: "",
+    error: null,
+    status: false,
 };
 
 const Payment = () => {
@@ -18,6 +20,8 @@ const Payment = () => {
     let handleInputChange = (e) => {
         setData({
             ...data,
+            error: null,
+            status: false,
             [e.target.name]: e.target.value,
         });
     };
@@ -38,6 +42,11 @@ const Payment = () => {
             return;
         }
 
+        setData({
+            ...data,
+            status: true,
+        });
+
         check_payment(data, tripDetails);
 
         !crudState.isFetching &&
@@ -56,17 +65,21 @@ const Payment = () => {
                     <span> Payment</span>
                 </h1>
                 <center>
-                    {crudState.isFetching === true ? (
-                        <p className="error" style={{ fontSize: "2.2rem" }}>
-                            Loading...Please Wait
+                    {data.error && (
+                        <p className="error" style={{ fontSize: "1.4rem" }}>
+                            {data.error}
                         </p>
-                    ) : (
-                        crudState.payment_check_msg !== "" && (
+                    )}
+                    {data.status &&
+                        (crudState.isFetching === true ? (
+                            <p className="error" style={{ fontSize: "2.2rem" }}>
+                                Loading...Please Wait
+                            </p>
+                        ) : (
                             <p className="error" style={{ fontSize: "2.2rem" }}>
                                 {crudState.payment_check_msg}
                             </p>
-                        )
-                    )}
+                        ))}
                 </center>
                 <div className="content">
                     <form action="#">

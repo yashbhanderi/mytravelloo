@@ -104,7 +104,6 @@ const CrudReducer = (state, action) => {
         case "FETCH_PAYMENT_REQUEST":
             return {
                 ...state,
-                payment_check_msg: [],
                 isFetching: true,
                 hasError: false,
             };
